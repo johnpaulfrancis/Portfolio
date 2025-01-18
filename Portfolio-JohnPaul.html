@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio | John Paul Francis</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" />
+        <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <style>
+            /* common styles */
+            html {
+                scroll-behavior: smooth; /* Enables smooth scrolling */
+            }
+            body{
+                font-family: "Roboto",sans-serif;
+                font-size: 14px;
+                color: #fff;
+                background-color: #000;
+                margin:0;
+                font-weight: 300;
+                letter-spacing: 0.8px;
+            }
+            a{
+                color: #fff;
+            }
+            .width_adjust{
+                max-width: 70%;
+            }
+            img{
+                max-width: 100%;
+            }
+
+            .page_layout_body{
+                min-height: calc(100vh - 60px);
+            }
+            .highlight{
+                color: #25c678;
+            }
+            
+         
+            /* my introduction */
+         
+            .my_intro{
+                display: flex;
+                align-items: center;
+                font-family: "Bitter",serif;
+                min-height: calc(100vh - 80px);
+                padding: 40px;
+                margin:auto;
+            }
+            .my_intro .hello_its_me{
+                font-size: 70px;
+                line-height: 85px;
+                margin-bottom: 20px;
+            }
+            .my_intro .hello_its_me .i_am{
+                font-weight: 600;
+                letter-spacing: 1.5px;
+                font-size: 80px;
+            }
+            .my_intro .sub_intro{
+                font-size: 22px;
+                line-height: 38px;
+                font-weight: 300;
+            }
+            .page_wrap{
+                padding: 50px 40px;
+                margin-bottom: 100px;
+            }
+            .block_data .head_text{
+                font-weight: 600;
+                font-size: 45px;
+                margin-bottom: 50px;
+                position: relative;
+                padding-bottom: 20px;
+                font-family: "Bitter",serif;
+            }
+            .block_data .head_text:after{
+                content: "";
+                position: absolute;
+                left: 0;
+                height: 6px;
+                width:100px;
+                background-color: #565656;
+                bottom:0;
+            }
+            .block_data .sub_text{
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 30px;
+            }
+            .profile_wrapper{
+                max-width:300px;
+                width: 300px;
+                padding: 30px 40px;
+                border:1px solid #565656;
+                border-radius: 10px;
+                position: fixed;
+                background-color: #000;
+                top:50px;
+                left: 40px;
+                text-align: center;
+            }
+            .profile_wrapper .social_icons{
+                margin:20px 0;
+            }
+            .profile_wrapper .social_icons .ico_item{
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width:50px;
+                height:50px;
+                border-radius: 100%;
+                border:1px solid #565656;
+                margin: 0 5px;
+            }
+            .profile_wrapper .social_icons .ico_item img{
+                width: 25px;
+                height: 25px;
+            }
+            .profile_wrapper .img_wrap img{
+                max-width: 100%;
+                border-radius: 10px;
+            }
+            .profile_wrapper .img_wrap{
+                margin-bottom: 30px;
+            }
+            .profile_wrapper .name{
+                font-weight: 600;
+                font-size: 30px;
+                margin-bottom: 5px;
+                font-family: "Bitter",serif;
+            }
+            .profile_wrapper .ping_me{
+                text-decoration: none;
+                font-size: 18px;
+                margin-bottom: 20px;
+                display: inline-block;
+                position: relative;
+                /* padding-left: 25px; */
+                text-align: center;
+            }
+            /* .profile_wrapper .ping_me:before{
+                position: absolute;
+                left: 0;
+                top:0;
+                bottom: 0;
+                margin:auto;
+                font-size: 18px;
+                line-height: 18px;
+                height: 18px;
+                font-family: "Material Icons";
+                font-weight: 300;
+            } */
+            /* .profile_wrapper .email:before{
+                content: "\e158";
+            }
+            .profile_wrapper .phone:before{
+                content: "\e0b0";
+            } */
+            .profile_wrapper .desig{
+                font-size: 17px;
+                margin-bottom: 30px;
+            }
+            .content_wrapper{
+                max-width: calc(100% - 590px);
+                margin-left:auto;
+            }
+            .sticky_side_menu{
+                position: fixed;
+                right: 5px;
+                top:5px;
+                border:1px solid #565656;
+                border-radius:10px;
+                width: 30px;
+                padding:20px 10px;
+                text-align: center;
+                background-color: #000;
+            }
+            .sticky_side_menu .ico_menu{
+                text-decoration: none;
+                padding: 3px 0;
+                color: #b8b4b4;
+                font-size: 30px;
+                display: block;
+                position: relative;
+            }
+            .sticky_side_menu .ico_menu .icon_detail{
+                position: absolute;
+                right:45px;
+                font-size: 13px;
+                padding: 8px 13px;
+                border-radius: 60px;
+                background-color: #1b626c;
+                opacity: 0;
+                visibility: hidden;
+                transition: 0.1s ease-in;
+                font-weight: 600;
+            }
+            .sticky_side_menu .ico_menu:hover .icon_detail{
+                opacity: 1;
+                visibility: visible;
+            }
+            .sticky_side_menu .ico_menu:hover .ico{
+                color:#1b626c;
+            }
+            .active_tab{
+                display: inline-block;
+                border:1px solid #565656;
+                border-radius:60px;
+                padding: 10px 15px 10px 45px;
+                position: relative;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: 30px;
+                font-weight: 300;
+            }
+            .active_tab .icon_left{
+                position: absolute;
+                font-size: 24px;
+                height:24px;
+                line-height: 24px;
+                top:0;
+                bottom: 0;
+                left: 10px;
+                margin:auto;
+                color: #b8b4b4;
+            }
+            /* buttons */
+            .btn_main{
+                text-decoration: none;
+                border-radius: 30px;
+                padding: 13px 10px;
+                text-align: center;
+                background-color: #1b626c;
+                display: block;
+                margin-top:20px;
+                text-transform: uppercase;
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+           
+            .timeline_wrapper .timeline_item{
+                position: relative;
+                padding: 0 0 60px 40px;
+            }
+            .timeline_wrapper .timeline_item:last-child{
+                padding-bottom: 0;
+            }
+            .timeline_wrapper .timeline_item:after{
+                border-left: 1px solid #565656;
+                position: absolute;
+                left: 0;
+                content: "";
+                top:0;
+                bottom: 0;
+            }
+            .timeline_wrapper .timeline_item:before{
+                position: absolute;
+                width:13px;
+                height:13px;
+                border-radius: 100%;
+                background-color: #565656;
+                left: -7px;
+                top:0;
+                content: "";
+            }
+            .timeline_wrapper .timeline_item .years{
+                color: #b8b4b4;
+                font-size: 18px;
+                font-weight: 300;
+                margin-bottom: 10px;
+            }
+            .timeline_wrapper .timeline_item .title{
+                font-size: 22px;
+                font-weight: 500;
+                margin-bottom: 10px;
+                font-family: "Bitter",serif;
+            }
+            .skillset_wrapper{
+                display: grid;
+                gap: 15px;
+                grid-template-columns:1fr 1fr;
+            }
+            .skillset_wrapper .skillset_item{
+                border:1px solid;
+                padding: 20px;
+                border: 1px solid #565656;
+                border-radius: 10px;
+            }
+            .skillset_wrapper .skillset_item .title{
+                font-size: 18px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                font-family: "Bitter",serif;
+            }
+            .skillset_wrapper .skillset_item .desc{
+                font-size: 13px;
+                line-height: 23px;
+            }
+            .skillset_wrapper .skillset_item:hover{
+                border:1px solid #25c678;
+            }
+            .certification_wrap{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap:15px
+            }
+            .certification_wrap .c_item{
+                position: relative;
+                text-decoration: none;
+            }
+            .certification_wrap .c_item img{
+                border-radius:3px;
+                height: 150px;
+                object-fit: cover;
+                width: 100%;
+                object-position: center;
+            }
+            /*======================================================== helping styles ===================================================== */
+
+            /*======================================================= aniamtion styles =====================================================*/
+            @keyframes move-vertical {
+                0% {
+                    transform: translateY(8%);
+                }
+                50% {
+                    transform: translateY(-8%);
+                }
+                100% {
+                    transform: translateY(8%);
+                }
+            }
+
+
+
+            /* ======================================================== mdia queries ========================================================*/
+            @media only screen and (max-width:1640px){
+                .content_wrapper {
+                    max-width: calc(100% - 370px);
+                    margin-left: auto;
+                }
+                .my_intro{
+                    padding-top: 43px;
+                }
+                .sticky_side_menu{
+                    top:43px;
+                    right:10px
+                }
+                .profile_wrapper{
+                    top: 43px;
+                    left: 29px;
+                    padding: 30px 20px;
+                    width:280px;
+                }
+                .profile_wrapper .name{
+                    font-size: 25px;
+                }
+                .profile_wrapper .desig{
+                    font-size: 15px;
+                }
+                .profile_wrapper .img_wrap {
+                    margin-bottom: 15px;
+                }
+                .profile_wrapper .email{
+                    font-size: 15px;
+                    margin-bottom: 5px;
+                }
+                .profile_wrapper .social_icons .ico_item img {
+                    width: 20px;
+                    height: 20px;
+                }
+                .profile_wrapper .social_icons .ico_item{
+                    width:40px;
+                    height:40px;
+                }
+                .profile_wrapper .social_icons {
+                    margin: 15px 0;
+                }
+                .my_intro .hello_its_me{
+                    font-size: 48px;
+                    line-height: 64px;
+                }
+                .my_intro .hello_its_me .i_am{
+                    font-size: 63px;
+                }
+                .my_intro .sub_intro {
+                    font-size: 18px;
+                    line-height: 31px;
+                }
+                .active_tab .icon_left{
+                    font-size: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                }
+                .active_tab{
+                    font-size: 12px;
+                    padding: 7px 15px 8px 40px;
+                }
+                .sticky_side_menu .ico_menu{
+                    font-size: 28px;
+                }
+                .block_data .head_text{
+                    font-size: 35px;
+                }
+                .block_data .sub_text{
+                    font-size: 14px;
+                    line-height: 25px;
+                    margin-bottom: 27px;
+                }
+                .timeline_wrapper .timeline_item .years{
+                    font-size: 14px;
+                }
+                .timeline_wrapper .timeline_item .title{
+                    font-size: 18px;
+                }
+                .timeline_wrapper .timeline_item {
+                    padding: 0 0 40px 40px;
+                }
+                .skillset_wrapper .skillset_item .desc{
+                    font-size: 14px;
+                }
+                .width_adjust{
+                    max-width: 70%;
+                }
+                .btn_main{
+                    padding: 10px 10px;
+                    font-size: 14px;
+                }
+            }
+            @media only screen and (max-width:993px){
+                .page_layout_body:before{
+                    content: "";
+                    background-color: #000;
+                    position: fixed;
+                    height: 90px;
+                    top:0;
+                    left: 0;
+                    right: 0;
+                    z-index: 1;
+                }
+                .page_layout_body{
+                    padding-top: 50px;
+                    position: relative;
+                }
+                .profile_wrapper{
+                    position: relative;
+                    left: 0;
+                    right:0;
+                    margin:0 auto 60px;
+                }
+                .content_wrapper {
+                    max-width:100%;
+                }
+                .sticky_side_menu{
+                    position: fixed;
+                    top:20px;
+                    display: flex;
+                    width:auto;
+                    height: auto;
+                    left: 10px;
+                    right:10px;
+                    padding: 0;
+                    gap: 1px 20px;
+                    justify-content: center;
+                    z-index: 1;
+                }
+                .sticky_side_menu .ico_menu:hover .icon_detail {
+                    display: none;
+                }
+                .page_wrap{
+                    padding: 20px 30px;
+                    margin-bottom: 30px;
+                }
+                .active_tab{
+                    margin-bottom: 15px;
+                }
+                .my_intro{
+                    min-height: auto;
+                    padding: 30px 30px;
+                }
+                .my_intro .hello_its_me{
+                    font-size: 23px;
+                    line-height: 42px;
+                }
+                .my_intro .hello_its_me .i_am {
+                    font-size: 33px;
+                }
+                .my_intro .sub_intro {
+                    font-size: 15px;
+                    line-height: 26px;
+                }
+                .block_data .head_text {
+                    font-size: 25px;
+                    margin-bottom: 20px;
+                }
+                .block_data .head_text:after{
+                    height: 4px;
+                }
+                .certification_wrap,
+                .skillset_wrapper{
+                    grid-template-columns: 1fr;
+                }
+                .certification_wrap .c_item img{
+                    height:auto;
+                }
+                .width_adjust {
+                    max-width: 100%;
+                }
+                
+            }
+            @media only screen and (max-width:767px){
+               
+            }
+        </style>
+    </head>
+    <body class="bg_image">
+        <div class="page_layout_body">
+           
+            <div class="profile_wrapper">
+                <div class="name">John Paul Francis</div>
+                <div class="desig">Software Engineer</div>
+                <div class="img_wrap">
+                    <img src="images/JP_ProfilePic.jpg">
+                </div>
+                <a href="mailto:" class="ping_me email">johnpaulfrancis@gmail.com</a>
+                <br>
+                <a href="mailto:" class="ping_me phone">+91 8921563257</a>
+                <div class="social_icons">
+                    <a href="https://www.linkedin.com/in/johnpaulfrancis/" class="ico_item">
+                        <img src="Images/linkedin.svg">
+                    </a>
+                    <a href="https://www.instagram.com/johnpaulfrancis/" class="ico_item">
+                        <img src="Images/instagram.svg">
+                    </a>
+                    <a href="https://github.com/johnpaulfrancis/" class="ico_item">
+                        <img src="Images/github.svg">
+                    </a>
+                </div>
+                <a href="#" class="btn_main">
+                    Hire me
+                </a>
+            </div>
+            <div class="sticky_side_menu">
+                <a href="#home" class="ico_menu">
+                    <span class="material-icons-outlined ico">
+                        home
+                    </span>
+                    <span class="icon_detail">Introduction</span>
+                </a>
+                <a href="#about" class="ico_menu">
+                    <span class="material-icons-outlined ico">
+                        person
+                    </span>
+                    <span class="icon_detail">About</span>
+                </a>
+                <a href="#experience" class="ico_menu">
+                    <span class="material-icons-outlined ico">
+                        work_outline
+                    </span>
+                    <span class="icon_detail">Experience</span>
+                </a>
+                <a href="#education" class="ico_menu">
+                    <span class="material-icons-outlined ico">
+                        school
+                    </span>
+                    <span class="icon_detail">Education</span>
+                </a>
+                <a href="#skills" class="ico_menu">
+                    <span class="material-icons-outlined ico">
+                        emoji_objects
+                    </span>
+                    <span class="icon_detail">Skills</span>
+                </a>
+                <a href="#certifications" class="ico_menu">
+                    <span class="material-icons-outlined ico">
+                        workspace_premium
+                    </span>
+                    <span class="icon_detail">Certifications</span>
+                </a>
+            </div>
+            <div class="content_wrapper">
+                
+                <div class="my_intro" id="home">
+                    <div>
+                        <div class="active_tab">
+                            <span class="material-icons-outlined icon_left">
+                                home
+                            </span>
+                            introduction
+                        </div>
+                        <div class="hello_its_me">
+                            Hi, my name is <br><span class="i_am">John Paul Francis</span> 
+                        </div>
+                        <div class="sub_intro">
+                            I'm an <b>independant software engineer</b> <br>from Cochin, Kerala.
+                        </div>
+                    </div>
+                </div>
+                <div class="page_wrap" id="about">
+                    <div class="content_container">
+                        <div class="active_tab">
+                            <span class="material-icons-outlined icon_left">
+                                person
+                            </span>
+                            about
+                        </div>
+                        <div class="block_data">
+                            <div class="width_adjust">
+                                <div class="head_text">Every great software begin with
+                                    an even <span class="highlight">better story</span></div>
+                                <div class="sub_text">Results-driven .NET Developer with 6+ years of professional experience in developing and maintaining robust web applications. Proficient in .NET technologies, Web APIs, MS SQL, and jQuery, with a strong background in designing and implementing scalable solutions. Adept at full-stack development and delivering high-quality software to meet business needs.
+                                    <br/>Graduated with a B.Tech from Viswajyothi College of Engineering and Technology, Vazhakkulam, and currently contributing as a Software Engineer at Kott Software Pvt. Ltd., Kakkanad. Recognized for a proactive approach, problem-solving skills, and commitment to continuous learning and improvement in modern web technologies
+                                    </strong>.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_wrap" id="experience">
+                    <div class="content_container">
+                        <div class="active_tab">
+                            <span class="material-icons-outlined icon_left">
+                                work
+                            </span>
+                            Experience
+                        </div>
+                        <div class="block_data">
+                            <div class="width_adjust">
+                                <div class="head_text">A Visual <span class="highlight">Career Journey</span></div>
+                                <div class="timeline_wrapper">
+                                    <div class="timeline_item">
+                                        <div class="years">Mar 2020 - Present</div>
+                                        <div class="title">Kott Software Pvt. Ltd.</div>
+                                        <div class="loc">Software Engineer</div>
+                                    </div>
+                                    <div class="timeline_item">
+                                        <div class="years">Nov 2018 - Mar 2020</div>
+                                        <div class="title">Essensol</div>
+                                        <div class="loc">Junior Software Engineer</div>
+                                    </div>
+                                    <div class="timeline_item">
+                                        <div class="years">Mar 2018 - Aug 2018</div>
+                                        <div class="title">I-NET Infotech</div>
+                                        <div class="loc">Internship Trainee</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_wrap" id="education">
+                    <div class="content_container">
+                        <div class="active_tab">
+                            <span class="material-icons-outlined icon_left">
+                                school
+                            </span>
+                            Education
+                        </div>
+                        <div class="block_data">
+                            <div class="width_adjust">
+                                <div class="head_text">Academic  <span class="highlight">Milestones</span></div>
+                                <div class="timeline_wrapper">
+                                    <div class="timeline_item">
+                                        <div class="years">2013 - 2017</div>
+                                        <div class="title">B.Tech</div>
+                                        <div class="loc">Viswajyothi College of Engineering and Technology Vazhakkulam</div>
+                                    </div>
+                                    <div class="timeline_item">
+                                        <div class="years">2011 - 2013</div>
+                                        <div class="title">Higher Secondary</div>
+                                        <div class="loc">St. Joseph Higher Secondary School Karimannoor</div>
+                                    </div>
+                                    <div class="timeline_item">
+                                        <div class="years">2001 - 2011</div>
+                                        <div class="title">10th Grade</div>
+                                        <div class="loc">GVHS School Thattakuzha</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_wrap" id="skills">
+                    <div class="content_container">
+                        <div class="active_tab">
+                            <span class="material-icons-outlined icon_left">
+                                tips_and_updates
+                            </span>
+                            Skills
+                        </div>
+                        <div class="block_data">
+                            <div class="width_adjust">
+                                <div class="head_text">Areas of <span class="highlight">Expertise</span></div>
+                                <div class="skillset_wrapper">
+                                    <div class="skillset_item">
+                                        <div class="title">HTML</div>
+                                        <div class="desc">
+                                            The backbone of web development, enabling the creation of structured, accessible, and user-friendly websites ccessible, and user-friendly websites
+                                        </div>
+                                    </div>
+                                    <div class="skillset_item">
+                                        <div class="title">CSS</div>
+                                        <div class="desc">
+                                            The backbone of web development, enabling the creation of structured, accessible, and user-friendly websites
+                                        </div>
+                                    </div>
+                                    <div class="skillset_item">
+                                        <div class="title">JS</div>
+                                        <div class="desc">
+                                            The backbone of web development, enabling the creation of structured, accessible, and user-friendly websites
+                                        </div>
+                                    </div>
+                                    <div class="skillset_item">
+                                        <div class="title">ASP.net</div>
+                                        <div class="desc">
+                                            The backbone of web development, enabling the creation of structured, accessible, and user-friendly websites
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_wrap" id="certifications">
+                    <div class="content_container">
+                        <div class="active_tab">
+                            <span class="material-icons-outlined icon_left">
+                                workspace_premium
+                            </span>
+                            Certifications
+                        </div>
+                        <div class="block_data">
+                            <div class="width_adjust">
+                                <div class="head_text">Certified  <span class="highlight">Achievements</span></div>
+                                <div class="certification_wrap">
+                                    <a class="c_item" target="_blank" rel="noopener noreferrer" href="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAC5PY6OAVVFDZBKCR6AAZDCVBNV%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjQ0ODAwIn0.bgOZLtkmcl1halOerSmH1HQf23iU3AlwNCGH75B764LqZ3_0ix5bZJO4ZQdWVJOirKp1zB_go7axBnz9NWRd9SB79lRlKrdSUkrIYwnq4r1Jm9h38zu8p_ahvjA37sWjnoyYeE-W3wZT2UfWI82eu_f-lLeLt-3XDyik0OiCV7aKelfVno-_h-QNzMT17FyCTYDzstZ-_k2fmrqIe7bQVr3tQ91fbjVK33-AW_8vgGTTNAC1HXmw64l6ecI8okJJUo-XF6LMCfkioOQiV6W6rdRczSYKBznKX04c-jU9rjCzMelngX3Cjcs9nKB1aqoAXIAV3diRZb9H3MPeH28n7aCm_dbiK1h0nZY5n-SVW0Wq7KYM05cX_N1O3HjQrW0Q5WeZBAjZmBTqq9AOhxdcW_lATtpZlGy8fiOnlVQPLDGliGBh0KwYvey71-jOlP3DurB_9kI-Cwh_bb-499qjmS2W84zsfrRU2P9ydrigIwBAanyHspDDCZRhzox1EboW.yVEEKo2o158W0-MtLJXi8UT-uttKGODOWBhRt6bqlPo%26version%3DPublished&width=1024&height=999999&cb=63872820180">
+                                        <img alt="SE" src="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAC5PY6OAVVFDZBKCR6AAZDCVBNV%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjQ0ODAwIn0.bgOZLtkmcl1halOerSmH1HQf23iU3AlwNCGH75B764LqZ3_0ix5bZJO4ZQdWVJOirKp1zB_go7axBnz9NWRd9SB79lRlKrdSUkrIYwnq4r1Jm9h38zu8p_ahvjA37sWjnoyYeE-W3wZT2UfWI82eu_f-lLeLt-3XDyik0OiCV7aKelfVno-_h-QNzMT17FyCTYDzstZ-_k2fmrqIe7bQVr3tQ91fbjVK33-AW_8vgGTTNAC1HXmw64l6ecI8okJJUo-XF6LMCfkioOQiV6W6rdRczSYKBznKX04c-jU9rjCzMelngX3Cjcs9nKB1aqoAXIAV3diRZb9H3MPeH28n7aCm_dbiK1h0nZY5n-SVW0Wq7KYM05cX_N1O3HjQrW0Q5WeZBAjZmBTqq9AOhxdcW_lATtpZlGy8fiOnlVQPLDGliGBh0KwYvey71-jOlP3DurB_9kI-Cwh_bb-499qjmS2W84zsfrRU2P9ydrigIwBAanyHspDDCZRhzox1EboW.yVEEKo2o158W0-MtLJXi8UT-uttKGODOWBhRt6bqlPo%26version%3DPublished&width=1024&height=999999&cb=63872820180">
+                                        <div>Software Engineer | HackerRank</div>
+                                    </a>
+                                    <a class="c_item" target="_blank" rel="noopener noreferrer" href="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAC6XGI2QCUYVZE2ATCX4IKUTMS6%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjQ0ODAwIn0.DLJ8wAcAuz1eBTQ7muTizTP3NFMdzGcOPzkaTXCgEDxQ_L1vPReogsBDjzrndkIftdPYprFv7ftassQjaFxivnvXEvlipr8ol_mPBDkiWqkkusOA_yHsMppxtbseQgPF8m1imlQCDVq2pubWO7wLrjjUtSxVe5TDgsbAagXNTJrWXJaHgT9w_r20jTos6df1YHiug7zL9FL-cjBnuJgPIA5ZME6naM6DhYUmFJkLJxJcdqfoKKvXQdwv8F93waq-74h9hHuKOh92mazKUopYtA1km2m3oBIQ3LOWSdMf3zZIdkQXk8jWtGGvgFgrJ-V4fptu65PQ_k3lY9twjs40oh3jRNhphtTrDvdgCe_wu_5O541L5lQ1Q4CKsNtxKU2d6a7QH9xFDNjBk4q4r3HTvai1t-rNxbFaoBU8ykBxgMerp-2VUv5HnF5gPMiNIwJ3uQlpC9xuWn6wlcqLf8fx-rlZeC00xWkrKsnNFSV-QVSVqaWMt-oAJ3Wb4VWlZ9NE.PC7_AwWVltKCd3G1_WdB2uUKfGbpBKN2st3bgE10D6I%26version%3DPublished&width=1024&height=999999&cb=63872820457">
+                                        <img alt="C#" src="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAC6XGI2QCUYVZE2ATCX4IKUTMS6%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjQ0ODAwIn0.DLJ8wAcAuz1eBTQ7muTizTP3NFMdzGcOPzkaTXCgEDxQ_L1vPReogsBDjzrndkIftdPYprFv7ftassQjaFxivnvXEvlipr8ol_mPBDkiWqkkusOA_yHsMppxtbseQgPF8m1imlQCDVq2pubWO7wLrjjUtSxVe5TDgsbAagXNTJrWXJaHgT9w_r20jTos6df1YHiug7zL9FL-cjBnuJgPIA5ZME6naM6DhYUmFJkLJxJcdqfoKKvXQdwv8F93waq-74h9hHuKOh92mazKUopYtA1km2m3oBIQ3LOWSdMf3zZIdkQXk8jWtGGvgFgrJ-V4fptu65PQ_k3lY9twjs40oh3jRNhphtTrDvdgCe_wu_5O541L5lQ1Q4CKsNtxKU2d6a7QH9xFDNjBk4q4r3HTvai1t-rNxbFaoBU8ykBxgMerp-2VUv5HnF5gPMiNIwJ3uQlpC9xuWn6wlcqLf8fx-rlZeC00xWkrKsnNFSV-QVSVqaWMt-oAJ3Wb4VWlZ9NE.PC7_AwWVltKCd3G1_WdB2uUKfGbpBKN2st3bgE10D6I%26version%3DPublished&width=1024&height=999999&cb=63872820457">
+                                        <div>C# (Basic) | HackerRank</div>
+                                    </a>
+                                    <a class="c_item" target="_blank" rel="noopener noreferrer" href="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAABC2SB4DAUT7BH2FAGUVE2MINVJ%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjQ0ODAwIn0.eahNDvZQzwaTDiHDDGJJRduoubD0t3TfYAZuymVtzRRLVJEmeUGuwKqAuzVWD4SCHZ_MCGRo79KQ-0-BYwN8J5rKYXwLwhcade34EqUawUQ1R7w2LGoiodgi5KBWkbtIH5THeJnx3uMEA2t-WqWCpNz7mb_snUagEmhK4rZzMXcy6RO-8kq7-CrzUE7DEFckoKpppjXIuVRrFiazFiPsLzpaNF-LCBHLbJL137NNPqYIXpL3yiBHtvW4H3RVLmC9AqxIoudeB-2dudaMZO8i2Ed1jtnrCVhbElCWVxok2PcL4XQldHEpED-MPveT_Ueapz1QBdJ-VXD-q4ExpP8yIUmz7FiGLXB81WFioVk-UqGhGDYJTXq0fGzccHES_GBwkwTr34wAA-dLquXc2wf-pReKsoUi7TvHKLvcOaAdTRKVhIFI_G7XGcPcdyrdv_tOUAhV651FLkLYUfBrTgoOUjzjpRBBdmB1BWb3C4_pQ4BoDBDJnz5Fj8CkhAtWvPgN.wcMg43G-J4mF-w6JN3XTmozxQoDVowZ52k_W4bpfzuY%26version%3DPublished&width=1024&height=999999&cb=63872820628">
+                                        <img alt="SQL" src="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=png&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAABC2SB4DAUT7BH2FAGUVE2MINVJ%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjQ0ODAwIn0.eahNDvZQzwaTDiHDDGJJRduoubD0t3TfYAZuymVtzRRLVJEmeUGuwKqAuzVWD4SCHZ_MCGRo79KQ-0-BYwN8J5rKYXwLwhcade34EqUawUQ1R7w2LGoiodgi5KBWkbtIH5THeJnx3uMEA2t-WqWCpNz7mb_snUagEmhK4rZzMXcy6RO-8kq7-CrzUE7DEFckoKpppjXIuVRrFiazFiPsLzpaNF-LCBHLbJL137NNPqYIXpL3yiBHtvW4H3RVLmC9AqxIoudeB-2dudaMZO8i2Ed1jtnrCVhbElCWVxok2PcL4XQldHEpED-MPveT_Ueapz1QBdJ-VXD-q4ExpP8yIUmz7FiGLXB81WFioVk-UqGhGDYJTXq0fGzccHES_GBwkwTr34wAA-dLquXc2wf-pReKsoUi7TvHKLvcOaAdTRKVhIFI_G7XGcPcdyrdv_tOUAhV651FLkLYUfBrTgoOUjzjpRBBdmB1BWb3C4_pQ4BoDBDJnz5Fj8CkhAtWvPgN.wcMg43G-J4mF-w6JN3XTmozxQoDVowZ52k_W4bpfzuY%26version%3DPublished&width=1024&height=999999&cb=63872820628">
+                                        <div>SQL (Basic) | HackerRank</div>
+                                    </a>
+                                    <a class="c_item" target="_blank" rel="noopener noreferrer" href="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAAY2RMMVMHB2BAZYVYMVMZJJATH%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjM0MDAwIn0.2dVxiztbJiwHv5V0YysWhzDxMhwywdxG4fBmxx83qGae9IyDe1RQ2iKJLhUpc052qlFvYnE2gvHKcqAvGna-AxUAlolKfOPI0yFWKYdm9ci8ZOpGBC96zidrSrjVCD9jvSAdmTUf-yeyL95TMHPT3nqrTGgjNIij7lDxpNahYOCttJIWYf-tmeA8ZdRpHx47TYzv7PIUa_G6ZYPolVqZQK3STsqZYY8sg-5RObsC30qn57xalJA4naRoLqJXmBLU3fvyIyI12U5gZVz_HmqWe3wFPrXRpWvBpUxLFNPY5OvtBqvYM4Y_0pf597t9emDMxXXBhiLGXNzyGFAT4ja-BasbTKzv7xvgiNjPHWNSJJU6TI_SsRYbihq6RDtk4Wt6Z93wch_eN7WY_-w1YCbhLdE8kHYERcajYnBFZdX5X2xKu1ch0lGS8V_7dy-Zv9siwlwhn-OgLJLEhgtSyqPsJM2ewIGhP3zu8359i-81Sao-V1qsTIIoTT9xy5T0N2dU._9WIAMHkrgi1gR06-OH2mFFx_t7hdZA5-nKImKmzv5o%26version%3DPublished&width=1080&height=813&cb=63871165154">
+                                        <img alt="GDSC WOW 2022" src="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAAY2RMMVMHB2BAZYVYMVMZJJATH%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjM0MDAwIn0.2dVxiztbJiwHv5V0YysWhzDxMhwywdxG4fBmxx83qGae9IyDe1RQ2iKJLhUpc052qlFvYnE2gvHKcqAvGna-AxUAlolKfOPI0yFWKYdm9ci8ZOpGBC96zidrSrjVCD9jvSAdmTUf-yeyL95TMHPT3nqrTGgjNIij7lDxpNahYOCttJIWYf-tmeA8ZdRpHx47TYzv7PIUa_G6ZYPolVqZQK3STsqZYY8sg-5RObsC30qn57xalJA4naRoLqJXmBLU3fvyIyI12U5gZVz_HmqWe3wFPrXRpWvBpUxLFNPY5OvtBqvYM4Y_0pf597t9emDMxXXBhiLGXNzyGFAT4ja-BasbTKzv7xvgiNjPHWNSJJU6TI_SsRYbihq6RDtk4Wt6Z93wch_eN7WY_-w1YCbhLdE8kHYERcajYnBFZdX5X2xKu1ch0lGS8V_7dy-Zv9siwlwhn-OgLJLEhgtSyqPsJM2ewIGhP3zu8359i-81Sao-V1qsTIIoTT9xy5T0N2dU._9WIAMHkrgi1gR06-OH2mFFx_t7hdZA5-nKImKmzv5o%26version%3DPublished&width=1080&height=813&cb=63871165154">
+                                        <div>Google Developer Student Clubs WOW 2022</div>
+                                    </a>
+                                    <a class="c_item"  target="_blank" rel="noopener noreferrer" href="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAEAEY3BUXIQ4ZC3CSQ65YYVYAIQ%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjM0MDAwIn0.KnPofdjCbfqJyQ32JqRZcNtdHrUKnijHJ1n5aJEDwXOOD3_r6VP67Jw5MJ-ZeBy7vAtjDKYnCXZhKI5ofVHj3o-K_N_1qhEg-j99tS0UQvmIdEja6URwulEXcC7okbS_jkdX3qwPJmKyHIta2NmO41HCzyTYdS7UVyGNZsizDyEVHgcljACVcF6Vgs6miLmgDkIB93KsJG8G3zOLDEu8NdOlS3T36Vfk-xqdtLEHgMpButU2g6U34ZsF42ev7QekirR2yVyOSthWTV29LPMQ1aDwLGSKclqhfWDZh-S42uOVWRVG7Y5vVzgA_-N_olN7lobLabcG5_Jnme76ce5bWZbyU6B8ZwZpYkZmohcCNFhljUlbnTYs-j0G7KQF2AYxj0LWrc6Q3Kq2OLK8w_--uSJBF6c-vJ5b3r7ZUW2uTIhcSibnGF-czPU8TXBTszHF3VZLQqZEh_3omuX-gY0LHjd5sUwpXzkbJ0eDkeUY1ImdLkyspA0o1rAKlE2-POJ5.m5TkgFPa5kSza72VIsEianGiojAHb_fsGD0ldRsVkUI%26version%3DPublished&width=1787&height=1280&cb=63871165157">
+                                        <img alt="COCON 2021" src="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAEAEY3BUXIQ4ZC3CSQ65YYVYAIQ%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjM0MDAwIn0.KnPofdjCbfqJyQ32JqRZcNtdHrUKnijHJ1n5aJEDwXOOD3_r6VP67Jw5MJ-ZeBy7vAtjDKYnCXZhKI5ofVHj3o-K_N_1qhEg-j99tS0UQvmIdEja6URwulEXcC7okbS_jkdX3qwPJmKyHIta2NmO41HCzyTYdS7UVyGNZsizDyEVHgcljACVcF6Vgs6miLmgDkIB93KsJG8G3zOLDEu8NdOlS3T36Vfk-xqdtLEHgMpButU2g6U34ZsF42ev7QekirR2yVyOSthWTV29LPMQ1aDwLGSKclqhfWDZh-S42uOVWRVG7Y5vVzgA_-N_olN7lobLabcG5_Jnme76ce5bWZbyU6B8ZwZpYkZmohcCNFhljUlbnTYs-j0G7KQF2AYxj0LWrc6Q3Kq2OLK8w_--uSJBF6c-vJ5b3r7ZUW2uTIhcSibnGF-czPU8TXBTszHF3VZLQqZEh_3omuX-gY0LHjd5sUwpXzkbJ0eDkeUY1ImdLkyspA0o1rAKlE2-POJ5.m5TkgFPa5kSza72VIsEianGiojAHb_fsGD0ldRsVkUI%26version%3DPublished&width=1787&height=1280&cb=63871165157">
+                                        <div>COCON 2021</div>
+                                    </a>
+                                    <a class="c_item"  target="_blank" rel="noopener noreferrer" href="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAHAM4CCWOBU5RGYT4F4ISO3NONE%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjM0MDAwIn0.TEAFvJURVvmqpfcmeoWVhmNzPfwMLSXIu3d8VVTNbZscrYdpEtFzsQMYZTor9MkLPR8gqou9LJe3dFtx2kQhfSwgC_UHd142CGaLFZiXim2Tfou9UrghIYGruDzZ1eC0AgsK3ePvPCifVYFqTr1C9_FRdWKjnlxQnTBcd6RaZJV65-u_cvk2ecdyoSZ_Ep4l6suoka-M4BtDHQ4ig9JgVUEkbuvoX2SUmc0mX1WGSbGJT6h8lEADYd3ESJfGbS_NF5qZhEpouDvJVSO-NfukLla8kW-tTnXWXulwOjyzraKV4oJRuV6O_nyCsn2k2ebKVaSJvtZqfbyoY23ySJWKDfpzEtHtueszW_T_vegCDxxwinOaITrxksSZ6nFX3EgGmPrc6JaDGwCpE8Brh6agxnV0GVV7AmlvcyMs3IYc-8YXiftzEc6QR0FQDI7PJ1-Zkp2Iz7tjZSeEcJaURX0dhCX1jA-RojbwcEgfTJKwoEIHZH7OcoQ99kFPe6dsh0MJ.ZO-RrSgk-oOyT4-U1hRfS0EAmgZTdcZ_Ot57NlK20mY%26version%3DPublished&width=1080&height=761&cb=63871165155">
+                                        <img alt="DevFest 2021" src="https://eastus1-mediap.svc.ms/transform/thumbnail?provider=spo&farmid=192479&inputFormat=jpg&cs=fFNQTw&docid=https%3A%2F%2Fmy.microsoftpersonalcontent.com%2F_api%2Fv2.0%2Fdrives%2Fb!hrtoIbyjqEGIvvoxGx0YfZ9RrTqF9gFOtejC8ZmlIKX7XIHEHuWXTLmFBVDKCGV_%2Fitems%2F01SK3GAAHAM4CCWOBU5RGYT4F4ISO3NONE%3Ftempauth%3Dv1e.eyJzaXRlaWQiOiIyMTY4YmI4Ni1hM2JjLTQxYTgtODhiZS1mYTMxMWIxZDE4N2QiLCJhdWQiOiIwMDAwMDAwMy0wMDAwLTBmZjEtY2UwMC0wMDAwMDAwMDAwMDAvbXkubWljcm9zb2Z0cGVyc29uYWxjb250ZW50LmNvbUA5MTg4MDQwZC02YzY3LTRjNWItYjExMi0zNmEzMDRiNjZkYWQiLCJleHAiOiIxNzM3MjM0MDAwIn0.TEAFvJURVvmqpfcmeoWVhmNzPfwMLSXIu3d8VVTNbZscrYdpEtFzsQMYZTor9MkLPR8gqou9LJe3dFtx2kQhfSwgC_UHd142CGaLFZiXim2Tfou9UrghIYGruDzZ1eC0AgsK3ePvPCifVYFqTr1C9_FRdWKjnlxQnTBcd6RaZJV65-u_cvk2ecdyoSZ_Ep4l6suoka-M4BtDHQ4ig9JgVUEkbuvoX2SUmc0mX1WGSbGJT6h8lEADYd3ESJfGbS_NF5qZhEpouDvJVSO-NfukLla8kW-tTnXWXulwOjyzraKV4oJRuV6O_nyCsn2k2ebKVaSJvtZqfbyoY23ySJWKDfpzEtHtueszW_T_vegCDxxwinOaITrxksSZ6nFX3EgGmPrc6JaDGwCpE8Brh6agxnV0GVV7AmlvcyMs3IYc-8YXiftzEc6QR0FQDI7PJ1-Zkp2Iz7tjZSeEcJaURX0dhCX1jA-RojbwcEgfTJKwoEIHZH7OcoQ99kFPe6dsh0MJ.ZO-RrSgk-oOyT4-U1hRfS0EAmgZTdcZ_Ot57NlK20mY%26version%3DPublished&width=1080&height=761&cb=63871165155">
+                                        <div>DevFest 2021</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </body>
+</html>
